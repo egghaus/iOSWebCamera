@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script src="http://10.20.80.103:9393/webcamera.js"></script>
+	<style>
+		body {
+			background: url('background.png');
+			text-align: center;
+		}
+		a {
+			color: #fff;
+		}
+		input[type=submit] {
+			font-size: 20px;
+		}
+		#x100 {
+			width: 100px;
+			height: 100px;
+			border: 1px solid #fff;
+		}
+		#h100w200 {
+			width: 200px;
+			height: 100px;
+			border: 1px solid #fff;
+		}
+		#x25 {
+		  width: 25px;
+			height: 25px;
+			border: 1px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<br />
+	
+	<div id="x100">
+		<a href="webcamera:choose_photo?div_id=x100&input_id=x100_encoded&height=100&width=100">100x100</a>
+	</div>
+	
+	<br />
+	
+	<div id="h100w200">
+		<a href="webcamera:choose_photo?div_id=h100w200&input_id=h100w200_encoded&height=100&width=200">200x100</a>
+	</div>
+	
+	<br />
+	
+	<div id="x25"></div>
+	
+	<a href="webcamera:choose_photo?div_id=x25&input_id=x25_encoded&height=25&width=25">x25</a>
+	
+	<br />
+	
+	<form action="http://10.20.80.103:9393/upload" method="post">
+		<input type="hidden" name="x100_encoded" id="x100_encoded" />
+		<input type="hidden" name="h100w200_encoded" id="h100w200_encoded" />
+    <input type="hidden" name="x25_encoded" id="x25_encoded" />
+		<input type="submit" value="Upload" />
+	</form>
+</body>
+</html>
